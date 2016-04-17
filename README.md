@@ -4,25 +4,25 @@ https://www.sensirion.com/en/products/digital-humidity-sensors-for-reliable-meas
 ##Sales blurb:
 > "The Smart Gadget not only shows humidity and temperature values on the display, but can also communicate with a bluetooth SMART capable device like a smartphone."
 
-##How to use on the Raspberry Pi? 
+##How to communicate the Raspberry Pi? 
 This is done with a Raspberry Pi 2B running Ubuntu Mate, but should work on other distributions.
 
-##Use a compatable USB Blurtooth dongle. 
+##Use a compatable USB Blurtooth dongle
 I use the Plugable one:
 http://www.amazon.co.uk/Plugable-Bluetooth-Adapter-Raspberry-Compatible/dp/B009ZIILLI?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o00_s00
 Others may work.
 
-##Install the BlueZ package. 
+##Install the BlueZ package
 I downloaded the latest version from
 https://www.kernel.org/pub/linux/bluetooth
 Install instructions can be found here
 http://www.elinux.org/RPi_Bluetooth_LE#BlueZ_installation
-Or you can install from the repositry
+Or you can install from the repositry, but I didn't test this
 ```
 $ sudo apt-get install bluez bluez-utils
 ```
 
-##Test connecting. 
+##Test connecting
 Press the button on the sensor gadget to switch on the bluetooth radio. Then :
 ```
 $ sudo hcitool dev
@@ -55,9 +55,9 @@ From the gatttols prompt:
 [DC:88:34:2D:8E:DB][LE]> char-read-uuid 00002235-b38d-4985-720e-0F993a68ee
 handle: 0x0037   value: 00 00 b2 41
 ```
-The value is a 32bit floating point number. See bttest.py to see how to convert it to a readable number.
+The value is a 32bit little-endian floating point number. See bttest.py to see how to convert it to a readable number.
 
-##Reading from a python script. 
+##Reading from a python script
 I use the pygatt library.
 https://github.com/peplin/pygatt
 Install using pip
