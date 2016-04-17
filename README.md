@@ -5,7 +5,7 @@ https://www.sensirion.com/en/products/digital-humidity-sensors-for-reliable-meas
 > "The Smart Gadget not only shows humidity and temperature values on the display, but can also communicate with a bluetooth SMART capable device like a smartphone."
 
 ##How to use on the Raspberry Pi? 
-This id done with a Raspberry Pi 2B running Ubuntu Mate, but should work on other distributions.
+This is done with a Raspberry Pi 2B running Ubuntu Mate, but should work on other distributions.
 
 ##Use a compatable USB Blurtooth dongle. 
 I use the Plugable one:
@@ -46,9 +46,10 @@ Connection successful
 
 ##Reading the sensor data.
 For this you need to know the UUID of the sensors. This can be found in the documentation from the Sensiron GitHub site.
-> TEMPERATURE_UUID="00002235-b38d-4985-720e-0F993a68ee41"
-> HUMIDITY_UUID="00001235-b38d-4985-720e-0F993a68ee41"
-> BATTERY_UUID="2A19"
+- TEMPERATURE_UUID="00002235-b38d-4985-720e-0F993a68ee41"
+- HUMIDITY_UUID="00001235-b38d-4985-720e-0F993a68ee41"
+- BATTERY_UUID="2A19"
+
 From the gatttols prompt:
 ```
 [DC:88:34:2D:8E:DB][LE]> char-read-uuid 00002235-b38d-4985-720e-0F993a68ee
