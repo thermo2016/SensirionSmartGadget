@@ -66,3 +66,12 @@ pip install pygatt
 ```
 See btread.py to see how to read the sensors.
 
+##References
+https://github.com/Sensirion
+https://rnestler.github.io/reading-the-shtc1-smart-gadget-ble-device.html
+https://github.com/peplin/pygatt
+
+
+
+
+
